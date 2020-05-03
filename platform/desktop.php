@@ -7,6 +7,8 @@
     <div class="columns-block container">
         <div class="row">
             <?php
+            if(mysqli_num_rows($portfoliodesktopquery)!=0){
+                
                 while ($portfoliodesktop = mysqli_fetch_array($portfoliodesktopquery)) {
                     $foto = $portfoliodesktop['foto'];
                     $foto = explode('|', $foto);
@@ -27,6 +29,15 @@
                 </div>
             <?php
                 }
+            } else {
+            ?>
+                <div class="container">
+                    <div class="col-md-12">
+                        <i>Belum Ada Portofolio Disini</i>
+                    </div>
+                </div>
+            <?php
+            }
             ?>
         </div>  
     </div>
