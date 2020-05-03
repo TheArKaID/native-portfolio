@@ -39,7 +39,7 @@ $eduquery = mysqli_query($connect, "SELECT *  FROM education");
                 while ($edudata = mysqli_fetch_array($eduquery)) {
                     echo "<tr>
                     <td>
-                        $edudata[nama]
+                        $edudata[tingkat]
                     </td>
                     <td>
                         $edudata[jurusan]
