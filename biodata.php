@@ -252,8 +252,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="feedback-form">
-                                    <h2>Get in touch</h2>
-                                    <form id="contactForm" action="function/sendmail.php" method="POST">
+                                    <h2 id="msgHeader">Get in touch</h2>
+                                    <div id="msgInfo"></div>
+                                    <!-- <form id="contactForm" action="#" method="POST"> -->
                                         <div class="form-group">
                                             <label for="InputName">Name</label>
                                             <input type="text" name="name" required="" class="form-control" id="InputName" placeholder="Full Name">
@@ -270,8 +271,8 @@
                                             <label for="message-text" class="control-label">Message</label>
                                             <textarea class="form-control" rows="4" required="" name="message" id="message-text" placeholder="Write message"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-danger">Submit</button>
-                                    </form>
+                                        <input id="btnSubmit" type="button" class="btn btn-danger" onclick="sendMSG()" value="Kirim">
+                                    <!-- </form> -->
                                 </div>
                                 <!-- .feedback-form -->
                             </div>
@@ -288,7 +289,57 @@
     <!-- .columns-block -->
 </div>
 <!-- #main-wrapper -->
+<script>
+    function sendMSG() {
+        var name = document.getElementById('InputName').value;
+        var email = document.getElementById('InputEmail').value;
+        var subject = document.getElementById('InputSubject').value;
+        var message = document.getElementById('message-text').value;
 
+        if(!name=="" && !email=="" && !subject=="" && !message==""){
+            document.getElementById('InputName').disabled = true;
+            document.getElementById('InputEmail').disabled = true;
+            document.getElementById('InputSubject').disabled = true;
+            document.getElementById('message-text').disabled = true;
+            document.getElementById("btnSubmit").value = "Mengirim...";
+            document.getElementById("btnSubmit").disabled = true;
+
+            var params = "name="+name+"&email="+email+"&subject="+subject+"&message="+message;
+            
+            var r = new XMLHttpRequest();
+            r.open("POST", "plugin/mailer/sendmail.php", true);
+            r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            r.onreadystatechange = function () {
+                if (r.readyState != 4 || r.status != 200) return;
+                    document.getElementById("msgInfo").innerHTML = "";
+                    document.getElementById("msgInfo").innerHTML = r.responseText
+                    $('html, body').animate({
+                        scrollTop: $("#msgHeader").offset().top
+                    }, 2000);
+                    document.getElementById('InputName').disabled = false;
+                    document.getElementById('InputEmail').disabled = false;
+                    document.getElementById('InputSubject').disabled = false;
+                    document.getElementById('message-text').disabled = false;
+                    document.getElementById("btnSubmit").disabled = false;
+                    document.getElementById("btnSubmit").value = "Kirim";
+            };
+            r.send(params);
+        } else{
+            $msgInfo = "<div class='alert alert-warning alert-dismissible fade show' role='alert'>"+
+                            "<strong>Gagal Mengirim Pesan!</strong> Semua Info Harus Diisi"+
+                            "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"+
+                            "<span aria-hidden='true'>&times;</span>"+
+                            "</button>"+
+                        "</div>";
+            document.getElementById("msgInfo").innerHTML = "";
+            document.getElementById("msgInfo").innerHTML = $msgInfo
+            $('html, body').animate({
+                scrollTop: $("#msgHeader").offset().top
+            }, 2000);
+        }
+
+    }
+</script>
 <!-- JS -->
 <script src="js/theia-sticky-sidebar.js"></script>
 <script src="js/scripts.js"></script>
