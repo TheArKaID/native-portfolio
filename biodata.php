@@ -134,8 +134,8 @@
                                 <div class='content-item'>
                                     <small>$educationdata[tahun]</small>
                                     <h3>$educationdata[jurusan]</h3>
+                                    <small>$educationdata[tingkat]</small>
                                     <h4>$educationdata[keterangan]</h4>
-
                                     <p>$educationdata[alamat]</p>
                                 </div>
                             </div>";
