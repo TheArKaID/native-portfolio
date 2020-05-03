@@ -46,7 +46,7 @@ $profiledata = mysqli_fetch_assoc($profilequery);
     <title>I'm a King of my Life</title>
 </head>
 
-<body data-senna-surface="data-senna-surface" data-senna="data-senna" style="font-family: ubuntuFont">
+<body>
     <div class="col-md-12">
         <div class="row" style="background-color: #dc3545; color: white; padding: 16px; font-size: 20pt">
             <div class="col-md-2" style="text-align: left">
@@ -112,7 +112,6 @@ $profiledata = mysqli_fetch_assoc($profilequery);
     <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <script type="text/javascript" src="../js/sidenav.js"></script>
-    <script type="text/javascript" src="../js/senna.js"></script>
 </body>
 
 </html>

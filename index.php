@@ -4,8 +4,7 @@
     session_start();
     $platform = isset($_GET["platform"]) ? $_GET["platform"] : false;
     $view = isset($_GET["view"]) ? $_GET["view"] : false;
-    $opened = false;
-
+    
     $profilequery = mysqli_query($connect, "SELECT * FROM profile");
     $profiledata = mysqli_fetch_array($profilequery);
     $expertisequery = mysqli_query($connect, "SELECT * FROM expertise");
@@ -14,7 +13,6 @@
     $interestquery = mysqli_query($connect, "SELECT * FROM interest");
     $portfolioquery = mysqli_query($connect, "SELECT * FROM portfolio");
 
-    
     date_default_timezone_set('Asia/Jakarta');
     if(isset($_SESSION['datevisit'])){
         if($_SESSION['datevisit']!=date('Y-m-d')){
@@ -38,6 +36,8 @@
     <link rel="stylesheet" href="css/styleout.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/all.css">
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
     <style>
         .bg-sosmed {
             background-color: white;
@@ -47,8 +47,7 @@
         }
     </style>
 </head>
-
-<body data-senna-surface="data-senna-surface" data-senna="data-senna">
+<body>
     <div class="container-fluid">
         <div class="row" style="background: #810006">
             <div class="col-md-12">
@@ -67,10 +66,18 @@
                         <li class="nav-item <?php if ($platform == "mobile") echo 'active'; ?>">
                             <a class="nav-link" href="index?platform=mobile">Mobile</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle focus" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Another</a>
+                            <div class="dropdown-menu" >
+                                <a class="dropdown-item" href="https://tkj.arka.web.id" target="_blank">ArKa:::TKJ</a>
+                                <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Coming Soon</a>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </div>
+        <div class="alert alert-warning">This site is under development</div>
         <div class="row">
             <div class="col-md-12">
                 <?php
@@ -103,14 +110,11 @@
                 </div>
             </nav>
             <div class="footer-copyright text-center py-3">
-                <span style="color: white">© 2020 Copyright </span><a href="https://themehippo.com">ResumeX</a> | 
-                <span style="color: white">Developed as Needed by <a href="/">TheArKa</a></span>
+                <span style="color: white">© 2020 Developed by <a href="/">TheArKa</a></span> | 
+                <span style="color: white">Mixed with </span><a href="https://themehippo.com">ResumeX</a>
             </div>
         </div>
     </footer>
-    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.js" type="text/javascript"></script>
-    <script src="js/senna.js" type="text/javascript"></script>
 </body>
 
 </html>

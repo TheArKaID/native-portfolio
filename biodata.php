@@ -253,7 +253,7 @@
                             <div class="col-md-12">
                                 <div class="feedback-form">
                                     <h2>Get in touch</h2>
-                                    <form id="contactForm" action="sendemail.php" method="POST">
+                                    <form id="contactForm" action="function/sendmail.php" method="POST">
                                         <div class="form-group">
                                             <label for="InputName">Name</label>
                                             <input type="text" name="name" required="" class="form-control" id="InputName" placeholder="Full Name">
@@ -290,7 +290,5 @@
 <!-- #main-wrapper -->
 
 <!-- JS -->
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
 <script src="js/theia-sticky-sidebar.js"></script>
 <script src="js/scripts.js"></script>
