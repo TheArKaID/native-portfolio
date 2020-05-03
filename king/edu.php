@@ -20,17 +20,10 @@ $eduquery = mysqli_query($connect, "SELECT *  FROM education");
             <table class="table" style="color: white">
                 <thead class="thead-red">
                     <tr>
+                        <th>Tingkat Pendidikan</th>
+                        <th>Jurusan</th>
+                        <th>Tahun</th>
                         <th>
-                            Tingkat Pendidikan
-                        </th>
-                        <th>
-                            Jurusan
-                        </th>
-                        <th>
-                            Tahun
-                        </th>
-                        <th>
-
                         </th>
                     </tr>
                 </thead>
