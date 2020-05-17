@@ -7,14 +7,15 @@
 
     $judul = isset($_POST['judul']) ? $_POST['judul'] : false;
     $keterangan = isset($_POST['keterangan']) ? $_POST['keterangan'] : false;
-    $url = isset($_POST['url']) ? $_POST['url'] : false;
+    $github = isset($_POST['github']) ? $_POST['github'] : false;
+    $web = isset($_POST['web']) ? $_POST['web'] : false;
     $platform = isset($_POST['platform']) ? $_POST['platform'] : false;
     $thumbnail = isset($_FILES['thumbnail']) ? $_FILES['thumbnail'] : false;
     $preview1 = isset($_FILES['preview1']) ? $_FILES['preview1'] : false;
     $preview2 = isset($_FILES['preview2']) ? $_FILES['preview2'] : false;
     $preview3 = isset($_FILES['preview3']) ? $_FILES['preview3'] : false;
     
-    if((!$judul) || (!$keterangan) || (!$url) || (!$platform) || (!$thumbnail) || (!$preview1) || (!$preview2) || (!$preview3)){
+    if((!$judul) || (!$keterangan) || (!$github) || (!$web) || (!$platform) || (!$thumbnail) || (!$preview1) || (!$preview2) || (!$preview3)){
         header("location: ?my=portofolio&then=add&info=null");
         die();
     }
@@ -83,8 +84,8 @@
     $images[]=[$thumbnailname, $prevname1, $prevname2, $prevname3];
     $foto = implode("|",$images[0]);
     
-    mysqli_query($connect, "INSERT INTO portfolio(judul, platform, keterangan, url, foto) 
-                                VALUES('$judul', '$platform', '$keterangan', '$url', '$foto')") or die(mysqli_error($connect));
+    mysqli_query($connect, "INSERT INTO portfolio(judul, platform, keterangan, github, web, foto) 
+                                VALUES('$judul', '$platform', '$keterangan', '$github', '$web', '$foto')") or die(mysqli_error($connect));
 
     header("location: ?my=portofolio&status=added");
 

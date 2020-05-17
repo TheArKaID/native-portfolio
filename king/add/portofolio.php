@@ -9,19 +9,13 @@ if ($action == "false")
     <div class="row myred" style="padding: 20px;">
         <form style="width: 100%" action="?my=portofolio&then=add&so=yes" method="post" enctype="multipart/form-data">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="judul">Judul Project</label>
                         <input class="form-control" type="text" name="judul" id="judul" required>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="url">URL</label>
-                        <input class="form-control" type="text" name="url" id="url" required>
-                    </div>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="url">Platform</label>
                         <select name="platform" class="form-control" required>
@@ -30,6 +24,20 @@ if ($action == "false")
                             <option value="mobile">Mobile</option>
                             <option value="web">Web</option>
                         </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="github">Github</label>
+                        <input class="form-control" type="text" name="github" id="github" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="web">Web</label>
+                        <input class="form-control" type="text" name="web" id="web" required>
                     </div>
                 </div>
             </div>
