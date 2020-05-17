@@ -26,17 +26,27 @@ $foto = explode('|', $portfoliodata['foto']);
         <form style="width: 100%" action="?my=portofolio&then=edit&so=yes" method="post">
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <input class="form-control" type="hidden" name="id" id="id" value="<?= $id; ?>" required>
                         <td>
                             <label for="judul">Judul</label>
                             <input class="form-control" type="text" name="judul" id="judul"value="<?= $portfoliodata['judul']; ?>" required>
                         </td>
                     </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
                     <div class="col-md-6">
                         <td>
-                            <label for="url">URL</label>
-                            <input class="form-control" type="text" name="url" id="url" value="<?= $portfoliodata['url']; ?>" required>
+                            <label for="github">Github</label>
+                            <input class="form-control" type="text" name="github" id="github" value="<?= $portfoliodata['github']; ?>">
+                        </td>
+                    </div>
+                    <div class="col-md-6">
+                        <td>
+                            <label for="web">Web</label>
+                            <input class="form-control" type="text" name="web" id="web" value="<?= $portfoliodata['web']; ?>">
                         </td>
                     </div>
                 </div>
