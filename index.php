@@ -70,6 +70,7 @@
                             <a class="nav-link dropdown-toggle focus" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Another</a>
                             <div class="dropdown-menu" >
                                 <a class="dropdown-item" href="https://tkj.arka.web.id" target="_blank">ArKa:::TKJ</a>
+                                <a class="dropdown-item" href="https://links.arka.web.id" target="_blank">ArKa:::Links</a>
                                 <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Coming Soon</a>
                             </div>
                         </li>
