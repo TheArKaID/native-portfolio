@@ -89,8 +89,15 @@
                             <li class="breadcrumb-item" aria-current="page">URL</li>
                         </ol>
                     </nav>
-                    <div class="col-md-12">
-                        <a id="btnHere" href="<?= $portofolio['url'];?>" target="_blank" class="btn" style="background-color: #992e24; color: white;">Go Here</a>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a id="btnHere" href="<?= $portofolio['github'];?>" target="_blank" class="btn" style="background-color: #992e24; color: white;">GitHub</a>
+                            <?php if($portofolio['web']!=""){?>
+                                <a id="btnHere" href="<?= $portofolio['web']; ?>" target="_blank" class="btn" style="background-color: #992e24; color: white;">Web</a>
+                            <?php } else {?>
+                                <a id="btnHere" class="btn" style="background-color: #646464; color: white;">Web (unavailable)</a>
+                            <?php }?>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">

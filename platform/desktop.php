@@ -21,7 +21,7 @@
                         </div>
                         <div class="portfolio-info">
                             <h3><?= $portfoliodesktop['judul'];?></h3>
-                            <small><?= $portfoliodesktop['url'];?></small>
+                            <small><?= $portfoliodesktop['github'];?></small>
                         </div>
                         <!-- portfolio-info -->
                     </a>
