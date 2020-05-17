@@ -23,7 +23,10 @@ if ($position == "false")
                         Project
                     </th>
                     <th>
-                        URL
+                        GitHub
+                    </th>
+                    <th>
+                        Web
                     </th>
                     <th style="width: 100px">
                         Aksi
@@ -38,7 +41,10 @@ if ($position == "false")
                         $portofoliodata[judul]
                     </td>
                     <td>
-                        $portofoliodata[url]
+                        $portofoliodata[github]
+                    </td>
+                    <td>
+                        $portofoliodata[web]
                     </td>
                     <td>
                         <a href='main?my=portofolio&then=edit&id=$portofoliodata[id]'><i class='fas fa-edit'></i></a>
