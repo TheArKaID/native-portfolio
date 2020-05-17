@@ -15,7 +15,7 @@
     $preview2 = isset($_FILES['preview2']) ? $_FILES['preview2'] : false;
     $preview3 = isset($_FILES['preview3']) ? $_FILES['preview3'] : false;
     
-    if((!$judul) || (!$keterangan) || (!$github) || (!$web) || (!$platform) || (!$thumbnail) || (!$preview1) || (!$preview2) || (!$preview3)){
+    if((!$judul) || (!$keterangan) || (!$platform) || (!$thumbnail) || (!$preview1) || (!$preview2) || (!$preview3)){
         header("location: ?my=portofolio&then=add&info=null");
         die();
     }

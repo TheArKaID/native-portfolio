@@ -31,13 +31,13 @@ if ($action == "false")
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="github">Github</label>
-                        <input class="form-control" type="text" name="github" id="github" required>
+                        <input class="form-control" type="text" name="github" id="github">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="web">Web</label>
-                        <input class="form-control" type="text" name="web" id="web" required>
+                        <input class="form-control" type="text" name="web" id="web">
                     </div>
                 </div>
             </div>
