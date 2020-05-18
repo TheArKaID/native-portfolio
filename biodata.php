@@ -204,7 +204,7 @@
 
                                         <div class="portfolio-info">
                                             <h3><?= $portfoliodata['judul'];?></h3>
-                                            <small><?= $portfoliodata['github'];?></small>
+                                            <small><?= $portfoliodata['github']!="" ? $portfoliodata['github'] : $portfoliodata['web'];?></small>
                                         </div>
                                         <!-- portfolio-info -->
                                     </a>
