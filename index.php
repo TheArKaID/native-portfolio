@@ -13,13 +13,22 @@
     $interestquery = mysqli_query($connect, "SELECT * FROM interest");
     $portfolioquery = mysqli_query($connect, "SELECT * FROM portfolio");
 
+    // Set default timezone ke Jakarta
     date_default_timezone_set('Asia/Jakarta');
+    // Cek apakah pernah mengunjungi web ini
     if(isset($_SESSION['datevisit'])){
+        // kalo Pernah, tanggalnya hari ini atau bukan,
         if($_SESSION['datevisit']!=date('Y-m-d')){
-            mysqli_query($connect, "UPDATE");
+            // Set tanggal hari ini
+            $_SESSION['datevisit'] = date('Y-m-d');
+            // Kalau bukan hari ini, Update
+            mysqli_query($connect, "UPDATE statistic SET visitors = visitors+1");
         }
+    // Kalau belum pernah
     } else{
+        // Buat session tanggal mengunjungi
         $_SESSION['datevisit'] = date('Y-m-d');
+        // Update
         mysqli_query($connect, "UPDATE statistic SET visitors = visitors+1");
     }
 ?>

@@ -53,7 +53,7 @@ $profiledata = mysqli_fetch_assoc($profilequery);
                 <img src="../img/thearka.png" alt="The ArKKa" class="rounded" style="height: auto; width: 100%; padding-right: 16px">
             </div>
             <div class="col-md-5" style="text-align: center">
-                B
+                B <?= $_SESSION['datevisit'];?>
             </div>
             <div class="col-md-5" style="text-align: right">
                 <a href="#logout"><i class="fas fa-sign-out-alt"></i></a>
