@@ -14,10 +14,10 @@
                     $foto = explode('|', $foto);
                     $thumbnail = $foto[0];
             ?>
-                <div class="col-md-6">
+                <div class="col-md-6" style="height: 250px">
                     <a class="portfolio-item" href="index?platform=web&view=<?=$portfolioweb['id'];?>">
                         <div class="portfolio-thumb">
-                            <img src="img/portofolio/<?= $thumbnail;?>" alt="">
+                            <img src="img/portofolio/<?= $thumbnail;?>" style="height: 250px">
                         </div>
                         <div class="portfolio-info">
                             <h3><?= $portfolioweb['judul'];?></h3>
